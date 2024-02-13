@@ -4,7 +4,7 @@ export default (sequelize) => {
   sequelize.define(
     "Contacts",
     {
-      id: {
+      id_contact: {
         type: DataTypes.UUID,
         primaryKey: true,
         allowNull: false,
@@ -24,7 +24,7 @@ export default (sequelize) => {
       },
       price: {
         type: DataTypes.DECIMAL,
-        allowNull: false,
+        allowNull: true,
       },
     },
     { timestamps: false }
