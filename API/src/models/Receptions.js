@@ -14,6 +14,10 @@ export default (sequelize) => {
         type: DataTypes.STRING(100),
         allowNull: true,
       },
+      price: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+      },
       vehicleID: {
         type: DataTypes.UUID,
         allowNull: false,

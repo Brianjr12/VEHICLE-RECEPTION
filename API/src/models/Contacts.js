@@ -10,6 +10,18 @@ export default (sequelize) => {
         allowNull: false,
         defaultValue: DataTypes.UUIDV4,
       },
+      receptionsCant: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          isNotGreaterThanThree(value) {
+            if (value > 3)
+              throw new Error(
+                "The number of receptions should not be more than 3"
+              );
+          },
+        },
+      },
       client: {
         type: DataTypes.STRING(100),
         allowNull: false,
@@ -18,13 +30,9 @@ export default (sequelize) => {
         type: DataTypes.STRING(50),
         allowNull: false,
       },
-      addres: {
+      address: {
         type: DataTypes.STRING(100),
         allowNull: false,
-      },
-      price: {
-        type: DataTypes.DECIMAL,
-        allowNull: true,
       },
     },
     { timestamps: false }
